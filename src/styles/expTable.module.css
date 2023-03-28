@@ -1,0 +1,64 @@
+.expTable__titleButtons
+{
+    border-top: 1px solid var(--site-expButtonBg);
+    margin-bottom: 2vh;
+}
+.expTable__titleButtons::before
+{
+    content: '';
+    display: block;
+    z-index: 1;
+    height: 2px;
+    margin-top: -1.5px;
+    width: calc(var(--size-expButton-width));
+    background: var(--site-blue);
+    transform: translateX(calc(var(--selected-company-index) * var(--size-expButton-width)));
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
+.expTable__titleButton
+{
+    padding: 1vh;
+    background-color: transparent;
+    color: var(--site-white);
+    border-radius: 0;
+    border: none;
+    width: var(--size-expButton-width);
+    transition: var(--transition);
+    font-size: var(--size-para-font);
+}
+.expTable__titleButton:hover
+{
+    background-color: var(--site-expButtonBg);
+    transition: var(--transition);
+}
+.expTable__titleButton.active
+{
+    background-color: var(--site-expButtonBg);
+    color: var(--site-green);
+    transition: var(--transition);
+}
+.expTable__companyTitle
+{
+    font-size: var(--size-head-font);
+    margin-bottom: 1vh;
+}
+.expTable__companyName
+{
+    color: var(--site-orange);
+}
+.expTable__companyInfo
+{
+    height: 50vh;
+    overflow: auto;
+    transition: var(--transition);
+}
+.expTable__date
+{
+    color: var(--site-blue);
+    margin-bottom: 1vh;
+    font-size: calc(var(--size-para-font) * 1.25);
+}
+.expTable__parent
+{
+    height: 54vh;
+}

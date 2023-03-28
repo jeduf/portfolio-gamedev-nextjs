@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=PT+Mono&display=swap');
+
+:root {
+    --transition: all 0.35s cubic-bezier(0.645,0.045,0.355,1);
+    --site-orange: #fab762;
+    --site-green: #20c997;
+    --site-white: #F3F0EC;
+    --site-blue: #a9c4ea;
+    --site-background: #1b2027;
+    --site-expButtonBg: #2e3641;
+    --site-scrollBar: #323b46;
+    --font-pt: 'PT Mono', monospace;
+    --font-jet: 'JetBrains Mono', monospace;
+    --size-navlink: 5.5vw;
+    --size-socialIcon: 10vw;
+    --size-nameH-font: 10vw;
+    --size-devH-font: 11vw;
+    --size-introP-font: 6vw;
+    --size-pageHeading-font: 7vw;
+    --size-expButton-width: 5rem;
+    --size-para-font: 1rem;
+    --size-head-font: 1.5rem;
+
+    /* This is for the experience table */
+    --selected-company-index: 0;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --site-orange: #d16626;
+    --site-green: #20c997;
+    --site-white: #F3F0EC;
+    --site-blue: #a9c4ea;
+    --site-background: #cfd8e3;
+    --site-expButtonBg: #2e3641;
+    --font-pt: 'PT Mono', monospace;
+    --font-jet: 'JetBrains Mono', monospace;
+  }
+} */
+@media (min-width: 600px)
+{
+  :root {
+    --size-navlink: 2.5vw;
+    --size-socialIcon: 3vw;
+    --size-nameH-font: 5vw;
+    --size-devH-font: 6.5vw;
+    --size-introP-font: 2vw;
+    --size-pageHeading-font: 4vw;
+  }
+}
+@media (min-width: 992px)
+{
+  :root {
+    --size-navlink: 1.5vw;
+    --size-socialIcon: 2vw;
+    --size-nameH-font: 4vw;
+    --size-devH-font: 4.5vw;
+    --size-introP-font: 1.5vw;
+    --size-pageHeading-font: 2vw;
+    --size-head-font: 2rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: var(--font-pt);
+  font-family: var(--font-jet);
+  background-color: var(--site-background);
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+}
+
+ul{
+  list-style-type: disc;
+  list-style-position: inside;
+  color: var(--site-white);
+}
+
+a {
+  color: var(--site-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--site-green);
+}
+
+p{
+  color: var(--site-white);
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: var(--site-white);
+}
+
+svg{
+  color : var(--site-white);
+  transition: var(--transition);
+}
+svg:hover
+{
+  color: var(--site-orange);
+  transition: var(--transition);
+}
+
+@keyframes fade-out {
+  0% {
+    height: 50vh;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50vh;
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.25s ease-in-out forwards;
+}
+.fade-in {
+  animation: fade-in 0.25s ease-in-out forwards;
+}
+
+/* NavBar */
+.nav{
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 992px)
+{
+  .nav{
+    display: block;
+    background-color: transparent;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+  }
+}
+.nav__item{
+  color: var(--site-white);
+  --thickness: .1em;
+  --strike: 0;
+  background: linear-gradient(90deg, transparent, currentColor 0) no-repeat right center / calc(var(--strike) * 100%) var(--thickness);
+  transition: background-size .4s ease 0s, color .4s ease 0s;
+}
+
+.nav__item:hover{
+  color: var(--site-orange);
+  --strike: 1;
+  background-position-x: left;
+}
+.nav__item.active{
+  color: var(--site-orange);
+  --strike: 1;
+  transition: 0s;
+}
+.nav__link{
+  font-size: var(--size-navlink);
+}
+.nav__num
+{
+  font-family: var(--font-pt);
+  color: var(--site-orange);
+}
+.socials{
+  display: flex;
+  position: absolute;
+  gap: 5px;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 992px)
+{
+  .socials{
+    bottom: 5%;
+    left:20%;
+    transform: unset;
+  }
+}
+.socials_IconsDiv
+{
+  width: var(--size-socialIcon);
+  height: var(--size-socialIcon);
+  transition: var(--transition);
+}
+.socials_Link
+{
+  display: block;
+  width: var(--size-socialIcon);
+  height: var(--size-socialIcon);
+  transition: var(--transition);
+}
+.socials_Icons
+{
+  color: var(--site-white)!important;
+  fill : var(--site-white)!important;
+}
+.sideMenu{
+  display: none;
+  position: relative;
+}
+@media (min-width: 992px)
+{
+  .sideMenu{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* STYLING SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 0.5vw; /* THIS WILL RESET THE DEFAULT SCORLLBAR STYLING */
+}
+
+/* TO STYLE THE SCROLLBAR TRACK */
+::-webkit-scrollbar-track {
+  background-color: var(--site-background); /* THIS WILL SET THE COLOR OF THE SCROLLBAR TRACK */
+}
+
+/* TO STYLE THE SCROLLBAR THUMB */
+::-webkit-scrollbar-thumb {
+  background-color: var(--site-scrollBar);
+  border-radius: 3vw;
+}
+
+

@@ -1,0 +1,69 @@
+.gamesContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    position: relative;
+    margin-right:1vw;
+    overflow: auto;
+    max-height: 60vh;
+  }
+  @media (min-width:600px)
+  {
+    .gamesContainer
+    {
+      grid-template-columns: repeat(2, 1fr);
+      max-height: 70vh;
+    }
+  }
+@media (min-width:992px)
+{
+  .gamesContainer
+  {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 80vh;
+  }
+}
+
+.moreContainer
+{
+  grid-column: 1 / -1;
+  width: 95%;
+  background-color: var(--site-background);
+  border-radius: 5px;
+  padding: 2vh 2vw;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom:1vh;
+}
+.moreContainer::before,
+.moreContainer::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, var(--site-orange), var(--site-blue),
+    var(--site-green), var(--site-orange), var(--site-blue),
+    var(--site-green), var(--site-orange), var(--site-blue),
+    var(--site-green)
+    );
+    background-size: 300%;
+    animation: border 12s linear infinite;
+}
+.moreContainer::after {
+  filter: blur(5px);
+}
+
+@keyframes border {
+  0%, 100% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100%;
+  }
+}

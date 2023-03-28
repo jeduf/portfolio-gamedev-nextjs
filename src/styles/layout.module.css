@@ -1,0 +1,172 @@
+.container {
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  }
+.header {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+}
+@media (min-width: 600px) {
+  .header {
+  width: 100%;
+  height: 20vh;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+  width: 25%;
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  }
+}
+.mobileNavbar {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  backdrop-filter: blur(5px) hue-rotate(271deg);
+  background-color: transparent;
+  transform: translate3d(0,-100%,0);
+  transition: var(--transition);
+}
+.mobileNavbar__open {
+  z-index: 1;
+  display: block;
+  position: relative;
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  backdrop-filter: blur(5px) hue-rotate(271deg);
+  background-color: transparent;
+  transform: translate3d(0,0,0);
+  transition: var(--transition);
+}
+@media (min-width: 992px) {
+  .mobileNavbar {
+    display: none;
+  }
+}
+.mobileNavButtons{
+  z-index: 1;
+  width: 10vw;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transition-property: opacity, transform;
+  transition-delay: 0.2s;
+  transform: rotate(0deg) translateY(-50%);
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 1;
+}
+.mobileNavButtons:hover{
+  cursor: pointer;
+  color: var(--site-white);
+}
+.mobileNavButtons__closed{
+  z-index: 1;
+  width: 10vw;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: rotate(-45deg) translateY(-50%);
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition-delay: 0s;
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+@media (min-width: 600px)
+{
+  .mobileNavButtons{
+    width: 5vw;
+  }
+  .mobileNavButtons__closed{
+    width: 5vw;
+  }
+}
+.mobileNavButtons__closed:hover{
+  cursor: pointer;
+  color: var(--site-white);
+}
+@media (min-width: 992px)
+{
+  .mobileNavButtons{
+    display: none;
+  }
+  .mobileNavButtons__closed{
+    display: none;
+  }
+}
+.logo{
+  display: block;
+  width: 10vw;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 600px)
+{
+  .logo{
+    width: 5vw;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    width: 3vw;
+    left: 15%;
+    top: 3%;
+    transform: none;
+  }
+}
+.main{
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+@media (min-width: 600px) {
+  .main {
+    width: 65%;
+    position: absolute;
+    right: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+@media (min-width: 992px) {
+  .main {
+    width: 75%;
+    position: absolute;
+    right: 0;
+    left: unset;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.copyTextMobile{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--site-white);
+  font-size: calc(var(--size-socialIcon) * 0.25);
+}
+.copyText{
+  position: fixed;
+  bottom: 1%;
+  left: 85%;
+  color: var(--site-white);
+  font-size: calc(var(--size-socialIcon) * 0.25);
+}
+.copyLink{
+  color: var(--site-blue);
+  transition: var(--transition);
+}

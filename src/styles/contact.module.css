@@ -1,0 +1,102 @@
+.container{
+    width: 100%;
+    background-color: var(--site-background);
+    position: relative;
+    border-radius: 5px;
+    padding: 2vh 2vw;
+
+}
+@media (min-width: 992px) {
+    .container{
+        width: 80%;
+    }
+}
+.container::before,
+.container::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, var(--site-orange), var(--site-blue),
+    var(--site-green), var(--site-orange), var(--site-blue),
+    var(--site-green), var(--site-orange), var(--site-blue),
+    var(--site-green)
+    );
+    background-size: 300%;
+    animation: border 12s linear infinite;
+}
+.container::after {
+    filter: blur(5px);
+}
+.container label{
+    color: var(--site-blue);
+}
+.container textarea,
+.container input{
+    background-color: var(--site-expButtonBg);
+    border: 3px solid var(--site-background);
+    color: var(--site-white);
+    font-family: var(--font-jet);
+}
+
+@keyframes border {
+    0%, 100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+}
+.email{
+    width: 50%;
+}
+.name{
+    width: 50%;
+}
+.subject{
+    width: 30%;
+}
+.message{
+    
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+.button button{
+    font-family: var(--font-jet);
+    padding: 1%;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    margin: 0vh 0vh 2vh 0vh;
+}
+@media (min-width: 600px) {
+    .block{
+        margin: 0vh 0vh 0.5vh 0vh;
+    }
+}
+@media (min-width: 992px) {
+    .block{
+        margin: 0vh 0vh 2vh 0vh;
+    }
+}
+.topRow{
+    display: flex;
+    gap: 1vw;
+}
+.afterText{
+    color: var(--site-white);
+    font-family: var(--font-jet);
+    font-size: 3vh;
+    margin: 5% 5%;
+    text-align: center;
+}

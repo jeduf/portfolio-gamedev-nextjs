@@ -1,0 +1,27 @@
+{
+  "name": "my-port",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "babel-plugin-inline-react-svg": "^2.0.2",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "gray-matter": "^4.0.3",
+    "next": "13.2.4",
+    "next-images": "^1.8.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1"
+  }
+}

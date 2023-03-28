@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/*": ["src/*"],
+      "@/images/*": ["./public/images/*"],
+    }
+  }
+}

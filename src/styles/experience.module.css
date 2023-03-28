@@ -1,0 +1,15 @@
+.experience__content
+{
+    width: 100%;
+}
+@media (min-width: 992px)
+{
+    .experience__content
+    {
+        width: 80%;
+    }
+}
+.experience
+{
+    transition: var(--transition);
+}

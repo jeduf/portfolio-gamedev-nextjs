@@ -1,0 +1,96 @@
+.card {
+    grid-column: span 1; /* each object spans 1 column */
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+  }
+.card h2{
+    text-align: center;
+    transition: var(--transition);
+    color: var(--site-green);
+    text-shadow: .1em .1em 0 hsl(30, 6%, 20%);
+}
+.cardActive h2{
+    color: var(--site-orange);
+    top: 30%;
+    transition: 0.5s ease-in-out;
+    text-shadow: .1em .1em 0 hsl(193, 50%, 30%);
+}
+.card:hover h2{
+    color: var(--site-orange);
+    top: 30%;
+    transition: 0.5s ease-in-out;
+    text-shadow: .1em .1em 0 hsl(193, 50%, 30%);
+}
+.cardActive{
+    
+}
+.cardDescription {
+    grid-column: 1 / -1; /* description spans both columns */
+    background-color: var(--site-expButtonBg);
+    width: 100%;
+    margin-top: -1vh;
+    padding: 2.5vh 1vh 1vw 1vw;
+    animation-name: open;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes open {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+.cardImage{
+    width: 100%;
+    height: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    background-color: #1a2129ea;
+    background-blend-mode: luminosity;
+    cursor: pointer;
+}
+.cardImage::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Adjust the blur amount as desired */
+    z-index: -1;
+}
+.cardImage:hover{
+    background-color: unset;
+    background-blend-mode: unset;
+}
+
+.cardImageActive{
+    background-color: unset;
+    background-blend-mode: unset;
+}
+.cardName{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.descriptionText{
+    margin-bottom: 2vh;
+}
+.cardImageContainer{
+    position: relative;
+    z-index: 3;
+}
