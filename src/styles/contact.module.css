@@ -41,6 +41,9 @@
     border: 3px solid var(--site-background);
     color: var(--site-white);
     font-family: var(--font-jet);
+    height: 40px;
+    border-radius: 0.5rem;
+    padding: 1%;
 }
 
 @keyframes border {
@@ -76,7 +79,6 @@
 .block{
     display: flex;
     flex-direction: column;
-    gap: 1vh;
     margin: 0vh 0vh 2vh 0vh;
 }
 @media (min-width: 600px) {
