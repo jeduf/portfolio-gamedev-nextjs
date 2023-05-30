@@ -7,6 +7,7 @@ import NavbarButtonClose from './images/cross.svg';
 import LogoSVG from './images/terminalLogo.svg';
 import React, { useState } from "react";
 import Link from 'next/link';
+import Terminal from './Terminal';
 
 export const siteTitle = 'Kadir Tabak • Portfolio • Game Developer';
 
@@ -15,6 +16,11 @@ export default function Layout({ children }) {
 
   const toggleMobileNavbar = () => {
     setOpenActive(!openActive);
+  };
+  const toggleTerminal = () => {
+    if (!window.matchMedia("(max-width: 768px)").matches) {
+      document.dispatchEvent(new Event('toggleTerminal'));
+    }
   };
 
   return (
@@ -35,7 +41,7 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
       </Head>
       <header className={styles.header}>
-        <LogoSVG className={styles.logo} />
+        <LogoSVG className={styles.logo} onClick={toggleTerminal} />
         <div className="sideMenu">
           <Navbar /><Socials /> <div className={styles.copyText}>Designed & Created By <Link className={styles.copyLink} href="https://github.com/jeduf" >Kadir Tabak</Link> </div>
         </div>
