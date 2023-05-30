@@ -1,0 +1,113 @@
+.terminal-container {
+  position: relative;
+}
+
+.terminal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  max-width: 800px;
+  height: 40vh;
+  max-height: 600px;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 1;
+}
+.terminal.open
+{
+    display: block;
+}
+.terminal.close
+{
+    display: none;
+}
+
+.terminal__dragging {
+  cursor: move;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 1.5rem;
+}
+
+.button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.body {
+  position: relative;
+  height: calc(100% - 3rem);
+  padding: 0.5rem;
+  overflow-y: scroll;
+  cursor: text;
+}
+
+.prompt {
+    position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.prompt span {
+  margin-right: 0.5rem;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+}
+/* .caret{
+    width: 1em;
+    height: 1em;
+    background: white;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+} */

@@ -109,6 +109,11 @@
   left: 5%;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
+}
+.logo:hover{
+  cursor: pointer;
+  fill: var(--site-orange);
 }
 @media (min-width: 600px)
 {
